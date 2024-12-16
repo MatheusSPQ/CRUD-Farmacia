@@ -100,9 +100,9 @@ Classifica os produtos, como "Medicamentos", "Beleza" ou "Suplementos".
 |-------------|---------------------------------|-------------------------------|
 | POST        | `/categorias`                  | Adicionar nova categoria       |
 | GET         | `/categorias`                  | Listar todas as categorias     |
-| GET         | `/categorias/{id}`             | Buscar categoria por ID        |
+| GET         | `/categorias/id/{id}`             | Buscar categoria por ID        |
 | PUT         | `/categorias`                  | Atualizar categoria por ID     |
-| DELETE      | `/categorias/{id}`             | Remover categoria por ID       |
+| DELETE      | `/categorias/delete/{id}`             | Remover categoria por ID       |
 | GET         | `/categorias/nome/{nome}`      | Buscar categoria por nome      |
 | GET         | `/categorias/descricao/{descricao}` | Buscar categoria por descrição |
 
@@ -111,9 +111,9 @@ Classifica os produtos, como "Medicamentos", "Beleza" ou "Suplementos".
 |-------------|---------------------------------|-------------------------------|
 | POST        | `/produtos`                    | Adicionar novo produto         |
 | GET         | `/produtos`                    | Listar todos os produtos       |
-| GET         | `/produtos/{id}`               | Buscar produto por ID          |
+| GET         | `/produtos/id/{id}`               | Buscar produto por ID          |
 | PUT         | `/produtos`                    | Atualizar produto por ID       |
-| DELETE      | `/produtos/{id}`               | Remover produto por ID         |
+| DELETE      | `/produtos/delete/{id}`               | Remover produto por ID         |
 | GET         | `/produtos/nome/{nome}`        | Buscar produto por nome        |
 | GET         | `/produtos/categoria/{categoria}` | Buscar produtos por categoria |
 
