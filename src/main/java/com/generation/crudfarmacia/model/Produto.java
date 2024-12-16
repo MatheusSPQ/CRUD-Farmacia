@@ -1,15 +1,15 @@
 package com.generation.crudfarmacia.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-import java.util.List;
-
 @Entity
-@Table(name = "tb_categorias")
-public class Categoria {
+@Table(name = "tb_produtos")
+public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,9 +23,23 @@ public class Categoria {
     @Size(min = 10, max = 1000)
     private String descricao;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
-    @JsonIgnoreProperties("categoria")
-    private List<Produto> produtos;
+    @ManyToOne
+    @JsonIgnoreProperties("produtos")
+    private Categoria categoria;
+
+    @NotNull(message = "O atributo precisaReceita é obrigatorio")
+    private Boolean receita;
+
+    @NotNull(message = "O atributo preco é obrigatorio!")
+    private Long preco;
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     public Long getId() {
         return id;
@@ -33,14 +47,6 @@ public class Categoria {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
     }
 
     public @NotBlank(message = "O atributo nome é obrigatorio") @Size(min = 2, max = 252) String getNome() {
@@ -57,5 +63,21 @@ public class Categoria {
 
     public void setDescricao(@NotBlank(message = "O atributo descricao é obrigatorio") @Size(min = 10, max = 1000) String descricao) {
         this.descricao = descricao;
+    }
+
+    public @NotNull(message = "O atributo precisaReceita é obrigatorio") Boolean getReceita() {
+        return receita;
+    }
+
+    public void setReceita(@NotNull(message = "O atributo precisaReceita é obrigatorio") Boolean receita) {
+        this.receita = receita;
+    }
+
+    public @NotNull(message = "O atributo preco é obrigatorio!") Long getPreco() {
+        return preco;
+    }
+
+    public void setPreco(@NotNull(message = "O atributo preco é obrigatorio!") Long preco) {
+        this.preco = preco;
     }
 }
