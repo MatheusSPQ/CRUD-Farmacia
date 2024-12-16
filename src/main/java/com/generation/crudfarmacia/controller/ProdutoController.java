@@ -55,7 +55,7 @@ public class ProdutoController {
 
     @GetMapping("/receita")
     public ResponseEntity<Object> getAllProdutosByReceita () {
-        return ResponseEntity.ok(produtoService.listProdutosByReceitaTrue());
+        return ResponseEntity.ok(produtoService.listProdutosByReceitaFalse());
     }
 
     @PutMapping

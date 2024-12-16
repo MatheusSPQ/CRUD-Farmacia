@@ -41,8 +41,8 @@ public class ProdutoService {
         return produtoRepository.findAllByCategoria_nomeContainingIgnoreCase(CategoriaNome);
     }
 
-    public List<Produto> listProdutosByReceitaTrue(){
-        return produtoRepository.findAllByReceitaTrue();
+    public List<Produto> listProdutosByReceitaFalse(){
+        return produtoRepository.findAllByReceitaFalse();
     }
 
     //Put - update
