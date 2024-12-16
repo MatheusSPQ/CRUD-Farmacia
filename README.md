@@ -116,7 +116,7 @@ Classifica os produtos, como "Medicamentos", "Beleza" ou "Suplementos".
 | DELETE      | `/produtos/delete/{id}`               | Remover produto por ID         |
 | GET         | `/produtos/nome/{nome}`        | Buscar produto por nome        |
 | GET         | `/produtos/categoria/{categoria}` | Buscar produtos por categoria |
-| GET         | `/produtos/receita` | Buscar produtos que precisam de receita |
+| GET         | `/produtos/receita` | Buscar produtos que não precisam de receita |
 
 ---
 
